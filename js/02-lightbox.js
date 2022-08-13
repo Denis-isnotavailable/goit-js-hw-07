@@ -16,10 +16,19 @@ function createGallery(galleryItems) {
         const imgEl = document.createElement('img');
         imgEl.classList.add('gallery__image');
         imgEl.src = preview;        
-        imgEl.alt = description;
+        imgEl.alt = description;        
 
         linkEl.append(imgEl);        
 
         return linkEl;
     });
 }
+
+
+let gallery = new SimpleLightbox('.gallery a');
+
+const imgEl = document.querySelector('.gallery__image');
+console.log(imgEl.getAttribute('alt'));
+
+gallery.options.captionsData = 'alt';
+gallery.options.captionDelay = 250;
