@@ -42,6 +42,8 @@ function openOriginalInModal(event) {
 
 function createGallery(galleryItems) {
     return galleryItems.map(({ preview, original, description, }) => {
+        const itemEl = document.createElement('div');
+        itemEl.classList.add('.gallery__item')
         const linkEl = document.createElement('a');
         linkEl.classList.add('gallery__link');
         linkEl.href = original;        
@@ -52,9 +54,10 @@ function createGallery(galleryItems) {
         imgEl.setAttribute('data-source', original);
         imgEl.alt = description;
 
-        linkEl.append(imgEl);        
+        linkEl.append(imgEl);
+        itemEl.append(linkEl);
 
-        return linkEl;
+        return itemEl;
     });
 }
 
