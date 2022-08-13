@@ -27,8 +27,5 @@ function createGallery(galleryItems) {
 
 let gallery = new SimpleLightbox('.gallery a');
 
-const imgEl = document.querySelector('.gallery__image');
-console.log(imgEl.getAttribute('alt'));
-
 gallery.options.captionsData = 'alt';
 gallery.options.captionDelay = 250;
